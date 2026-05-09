@@ -1,4 +1,4 @@
-const { game, newGame, showScore } = require("../game");
+const { game, newGame, showScore, addTurn } = require("../game");
 
 beforeAll(() => { 
 let fs = require("fs");
@@ -12,8 +12,8 @@ describe(" game object contains correct keys",() => {
     test ("Score key exists", () => {
         expect("score"in game).toBe (true);
 });
-test ("currentGame key exists", () => {
-        expect("currentGame"in game).toBe (true);
+test ("should be one move in the computer's game array", () => {
+        expect(game.currentGame.length).toBe (1);
 });
 test ("playerMove key exists", () => {
         expect("playerMove"in game).toBe (true);
